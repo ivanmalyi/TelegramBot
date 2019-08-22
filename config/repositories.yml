@@ -1,0 +1,246 @@
+services:
+  repository.notifications:
+    class: System\Repository\Notifications\NotificationsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.users:
+    class: System\Repository\Users\UsersRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.payments:
+    class: System\Repository\Payments\PaymentsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.items:
+    class: System\Repository\Items\ItemsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.itemsInputFields:
+    class: System\Repository\ItemsInputFields\ItemsInputFieldsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.sections:
+    class: System\Repository\Sections\SectionsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.messages:
+    class: System\Repository\Messages\MessagesRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.billingSettings:
+    class: System\Repository\BillingSettings\BillingSettingsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.operators:
+    class: System\Repository\Operators\OperatorsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.services:
+    class: System\Repository\Services\ServicesRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.itemsInputFieldsLocalization:
+    class: System\Repository\ItemsInputFieldsLocalization\ItemsInputFieldsLocalizationRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.itemsLocalization:
+    class: System\Repository\ItemsLocalization\ItemsLocalizationRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.itemTypes:
+    class: System\Repository\ItemTypes\ItemTypesRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.servicesLocalization:
+    class: System\Repository\ServicesLocalization\ServicesLocalizationRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.operatorsLocalization:
+    class: System\Repository\OperatorsLocalization\OperatorsLocalizationRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.commissions:
+    class: System\Repository\Commissions\CommissionsRepository
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPdo, ["@pdo"]]
+
+  repository.recipients:
+    class: System\Repository\Recipients\RecipientsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.recipientsTemplate:
+    class: System\Repository\RecipientsTemplate\RecipientsTemplateRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.paymentSystems:
+    class: System\Repository\PaymentSystems\PaymentSystemsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.paymentSystemsHeadersLocalization:
+    class: System\Repository\PaymentSystemsHeadersLocalization\PaymentSystemsHeadersLocalizationRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.callbackUrl:
+    class: System\Repository\CallbackUrls\CallbackUrlsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chats:
+    class: System\Repository\Chats\ChatsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.stagesMessages:
+    class: System\Repository\StagesMessages\StagesMessagesRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.cheques:
+    class: System\Repository\Cheques\ChequesRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chequesCallbackUrls:
+    class: System\Repository\ChequesCallbackUrls\ChequesCallbackUrlsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chequesCommissions:
+    class: System\Repository\ChequesCommissions\ChequesCommissionsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.display:
+    class: System\Repository\Display\DisplayRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chequePrint:
+    class: System\Repository\ChequePrint\ChequePrintRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.acquiringCommission:
+    class: System\Repository\AcquiringCommission\AcquiringCommissionRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.daemons:
+    class: System\Repository\Daemons\DaemonsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.itemsTags:
+    class: System\Repository\ItemsTags\ItemsTagsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.paymentsPrintData:
+    class: System\Repository\PaymentsPrintData\PaymentsPrintDataRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chatsHistory:
+    class: System\Repository\ChatsHistory\ChatsHistoryRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.chequesText:
+    class: System\Repository\ChequesText\ChequesTextRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.pointsInfo:
+    class: System\Repository\PointsInfo\PointsInfoRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.paymentsPurpose:
+    class: System\Repository\PaymentsPurpose\PaymentsPurposeRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.talk:
+    class: System\Repository\Talk\TalkRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.emoji:
+    class: System\Repository\Emoji\EmojiRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.buttons:
+    class: System\Repository\Buttons\ButtonsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.userAds:
+    class: System\Repository\UserAds\UserAdsRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]
+
+  repository.mccCodes:
+    class: System\Repository\MccCodes\MccCodesRepository
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPdo, ["@pdo"]]

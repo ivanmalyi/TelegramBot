@@ -1,0 +1,14 @@
+services:
+  console.checkservice:
+    class: System\Console\Service\Check\CheckService
+    calls:
+    - [setLogger, ['@logger']]
+    - [setBillingComponent, ['@component.billing']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setPayBot, ['@telegram.payPot']]
+    - [setPaymentsRepository, ['@repository.payments']]
+    - [setDaemonComponent, ['@component.daemon']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setPaymentsPrintDataRepository, ['@repository.paymentsPrintData']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]

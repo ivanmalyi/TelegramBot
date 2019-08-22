@@ -1,0 +1,21 @@
+parameters:
+  mysql.host: 192.168.10.4
+  mysql.port: 3306
+  mysql.username: whiterodger
+  mysql.password: "!QAZ2wsx"
+  mysql.database: casket
+  mailer_host: 77.120.97.36
+  mailer_port: 25
+  mailer_user: info@fc-sistema.com
+  mailer_password: Johthop8
+  redis.scheme: tcp
+  redis.host: 127.0.0.1
+  redis.port: 6379
+  redis.logs: sandboxLogsAcquiring
+  redis.password:
+  telegram_key: 261080330:AAEEnLAMt9nVG8OGehzhCMReb0N5DkQgvxs
+  telegram_name: FcSystemDevBot
+  telegram_chat_id: -194356723
+  masterPass.soapLocation: https://test.masterpassturkiye.com/MMIUIMasterPass_V2/MerchantServices/MPGGenerateKeyService.asmx
+  masterPass.soapAction: http://phaymobile.cardtekgroup/Tmm/GenerateKey
+  masterPass.clientId: 34703548

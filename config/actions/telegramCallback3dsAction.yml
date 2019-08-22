@@ -1,0 +1,20 @@
+services:
+  action.telegramCallback3ds:
+    class: System\Action\TelegramCallback3ds
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPayBot, ['@telegram.payPot']]
+    - [setTelegramBotSetting, ['@bot.settings']]
+    - [setTelegramCallback3dsFacade, ['@facade.telegramCallback3ds']]
+
+  facade.telegramCallback3ds:
+    class: System\Facade\TelegramCallback3ds\TelegramCallback3dsFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setChequesCallbackUrlsRepository, ['@repository.chequesCallbackUrls']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setPaymentsRepository, ['@repository.payments']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]

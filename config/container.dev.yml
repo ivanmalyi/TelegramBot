@@ -1,0 +1,39 @@
+services:
+
+  redis.client:
+    class: Predis\Client
+    arguments:
+      -
+        scheme: '%redis.scheme%'
+        host: '%redis.host%'
+        port: '%redis.port%'
+        password: '%redis.password%'
+
+  processor:
+    class: System\Util\Logging\AcquiringProcessor
+
+  formatter:
+    class: Monolog\Formatter\LogstashFormatter
+    arguments: ['logstash']
+
+  redisHandler:
+    class: Monolog\Handler\RedisHandler
+    arguments: ["@redis.client", '%redis.logs%', Monolog\Logger::ERROR]
+    calls:
+      - [setFormatter, ["@formatter"]]
+
+  logger:
+    class: Monolog\Logger
+    arguments: ['monolog']
+    calls:
+      - [pushHandler, ["@redisHandler"]]
+      - [pushProcessor, ["@logger.processor"]]
+
+  logger.processor:
+    class: System\Util\Logging\AcquiringProcessor
+
+  telegram.payPot:
+    class: System\Component\PayBot\TelegramPayBot
+    arguments: ["%telegram_key%"]
+    calls:
+      - [setLogger, ['@logger']]

@@ -1,0 +1,58 @@
+services:
+
+  protocol:
+    class: System\Kernel\Protocol\PostProtocol
+    calls:
+      - [setLogger, ['@logger']]
+
+  pdo:
+    class: System\Util\DB\MysqlPdoWrapper
+    arguments:
+      - '%mysql.host%'
+      - '%mysql.port%'
+      - '%mysql.username%'
+      - '%mysql.password%'
+      - '%mysql.database%'
+
+  http.client:
+    class: System\Util\Http\CurlHttpClient
+
+  bot:
+    class: System\Util\TelegramBot\TelegramBotApi
+    calls:
+      - [setBotSettings, ['@bot.settings']]
+
+  bot.settings:
+    class: System\Util\TelegramBot\BotSettings
+    arguments:
+      - '%telegram_key%'
+      - '%telegram_name%'
+      - '%telegram_chat_id%'
+
+  format:
+    class: System\Kernel\Protocol\JsonFormat
+
+  component.security:
+    class: System\Component\OpenSslSecurityComponent
+    calls:
+      - [setLogger, ['@logger']]
+
+  mailer:
+    class: System\Util\MailClient\Mailer
+    arguments:
+      - "@mailer_transport"
+      - '%mailer_user%'
+
+  mailer_transport:
+    class: \Swift_SmtpTransport
+    arguments:
+      - '%mailer_host%'
+      - '%mailer_port%'
+    calls:
+      - [setUsername, ['%mailer_user%']]
+      - [setPassword, ['%mailer_password%']]
+
+  protocol.get:
+    class: System\Kernel\Protocol\GetProtocol
+    calls:
+      - [setLogger, ['@logger']]

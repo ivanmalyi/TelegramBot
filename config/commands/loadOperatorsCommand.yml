@@ -1,0 +1,19 @@
+services:
+  console.loadoperatorscommand:
+    class: System\Console\Command\LoadOperators\LoadOperatorsCommand
+    calls:
+      - [setLogger, ['@logger']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setFlashNotice, ['@component.flashNotice']]
+      - [setBillingSettingsRepository, ['@repository.billingSettings']]
+      - [setSectionsRepository, ['@repository.sections']]
+      - [setOperatorsRepository, ['@repository.operators']]
+      - [setServicesRepository, ['@repository.services']]
+      - [setItemsRepository, ['@repository.items']]
+      - [setItemsInputFieldsRepository, ['@repository.itemsInputFields']]
+      - [setItemsInputFieldsLocalizationRepository, ['@repository.itemsInputFieldsLocalization']]
+      - [setItemsLocalizationRepository, ['@repository.itemsLocalization']]
+      - [setItemTypesRepository, ['@repository.itemTypes']]
+      - [setServicesLocalizationRepository, ['@repository.servicesLocalization']]
+      - [setOperatorsLocalizationRepository, ['@repository.operatorsLocalization']]
+      - [setMccCodesRepository, ['@repository.mccCodes']]

@@ -1,0 +1,9 @@
+services:
+  console.loadpaymentsystemscommand:
+    class: System\Console\Command\LoadPaymentSystems\LoadPaymentSystemsCommand
+    calls:
+    - [setLogger, ['@logger']]
+    - [setBillingComponent, ['@component.billing']]
+    - [setFlashNotice, ['@component.flashNotice']]
+    - [setPaymentSystemsRepository, ['@repository.paymentSystems']]
+    - [setPaymentSystemsHeadersLocalizationRepository, ['@repository.paymentSystemsHeadersLocalization']]

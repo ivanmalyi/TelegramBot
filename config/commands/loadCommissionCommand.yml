@@ -1,0 +1,8 @@
+services:
+  console.loadcommissioncommand:
+    class: System\Console\Command\LoadCommission\LoadCommissionCommand
+    calls:
+      - [setLogger, ['@logger']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setFlashNotice, ['@component.flashNotice']]
+      - [setCommissionsRepository, ['@repository.commissions']]

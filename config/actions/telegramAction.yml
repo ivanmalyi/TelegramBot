@@ -1,0 +1,240 @@
+services:
+  action.telegram:
+    class: System\Action\TelegramAction
+    calls:
+      - [setLogger, ['@logger']]
+      - [setChatsRepository, ['@repository.chats']]
+      - [setPayBot, ['@telegram.payPot']]
+      - [setButtonComponent, ['@component.button']]
+
+  facade.telegram:
+    class: System\Facade\Telegram\TelegramActionFacade
+    calls:
+      - [setLogger, ['@logger']]
+      - [setUsersRepository, ['@repository.users']]
+      - [setPaymentsRepository, ['@repository.payments']]
+      - [setItemsRepository, ['@repository.items']]
+      - [setItemsInputFieldsRepository, ['@repository.itemsInputFields']]
+      - [setSectionsRepository, ['@repository.sections']]
+      - [setMessagesRepository, ['@repository.messages']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setCallbackUrlRepository, ['@repository.callbackUrl']]
+
+  facade.start:
+    class: System\Facade\Start\StartFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setUsersRepository, ['@repository.users']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+    - [setUserAdsRepository, ['@repository.userAds']]
+
+  facade.getSections:
+    class: System\Facade\GetSections\GetSectionsFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setSectionsRepository, ['@repository.sections']]
+    - [setUsersRepository, ['@repository.users']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.loadServices:
+    class: System\Facade\LoadServices\LoadServicesFacade
+    calls:
+      - [setLogger, ['@logger']]
+      - [setChatsRepository, ['@repository.chats']]
+      - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+      - [setServicesRepository, ['@repository.services']]
+      - [setServicesLocalizationRepository, ['@repository.servicesLocalization']]
+      - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+      - [setMessageProcessingComponent, ['@component.messageProcessing']]
+      - [setButtonComponent, ['@component.button']]
+
+  facade.getOperators:
+    class: System\Facade\GetOperators\GetOperatorsFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setOperatorsRepository, ['@repository.operators']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.loadItems:
+    class: System\Facade\LoadItems\LoadItemsFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setItemsRepository, ['@repository.items']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.loadItemInputFields:
+    class: System\Facade\LoadItemInputFields\LoadItemInputFieldsFacade
+    calls:
+      - [setLogger, ['@logger']]
+      - [setChatsRepository, ['@repository.chats']]
+      - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+      - [setItemsInputFieldsRepository, ['@repository.itemsInputFields']]
+      - [setItemsInputFieldsLocalizationRepository, ['@repository.itemsInputFieldsLocalization']]
+      - [setChequesRepository, ['@repository.cheques']]
+      - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+      - [setMessageProcessingComponent, ['@component.messageProcessing']]
+      - [setButtonComponent, ['@component.button']]
+
+  facade.loadAmount:
+    class: System\Facade\LoadAmount\LoadAmountFacade
+    calls:
+      - [setLogger, ['@logger']]
+      - [setChatsRepository, ['@repository.chats']]
+      - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+      - [setChequesRepository, ['@repository.cheques']]
+      - [setItemsRepository, ['@repository.items']]
+      - [setDisplayRepository, ['@repository.display']]
+      - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+      - [setMessageProcessingComponent, ['@component.messageProcessing']]
+
+  facade.loadPaymentPage:
+    class: System\Facade\LoadPaymentPage\LoadPaymentPageFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setBillingComponent, ['@component.billing']]
+    - [setCallbackUrlsRepository, ['@repository.callbackUrl']]
+    - [setItemsRepository, ['@repository.items']]
+    - [setChequesCallbackUrlsRepository, ['@repository.chequesCallbackUrls']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.verify:
+    class: System\Facade\Verify\VerifyFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setBillingComponent, ['@component.billing']]
+    - [setDisplayRepository, ['@repository.display']]
+    - [setChequePrintRepository, ['@repository.chequePrint']]
+    - [setAcquiringCommissionRepository, ['@repository.acquiringCommission']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setItemTypesRepository, ['@repository.itemTypes']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.verify.test:
+    class: System\Facade\Verify\VerifyFacadeTest
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setBillingComponent, ['@component.billing.test']]
+    - [setDisplayRepository, ['@repository.display']]
+    - [setChequePrintRepository, ['@repository.chequePrint']]
+    - [setAcquiringCommissionRepository, ['@repository.acquiringCommission']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+
+  facade.loadCommissions:
+    class: System\Facade\LoadCommissions\LoadCommissionsFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setCommissionsRepository, ['@repository.commissions']]
+    - [setChequesCommissionsRepository, ['@repository.chequesCommissions']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+
+  facade.calculateCommission:
+    class: System\Facade\CalculateCommission\CalculateCommissionFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setCommissionsRepository, ['@repository.commissions']]
+    - [setChequesCommissionsRepository, ['@repository.chequesCommissions']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+
+  facade.search:
+    class: System\Facade\Search\SearchFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setItemsTagsRepository, ['@repository.itemsTags']]
+    - [setItemsLocalizationRepository, ['@repository.itemsLocalization']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.savePhone:
+    class: System\Facade\SavePhone\SavePhoneFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setUsersRepository, ['@repository.users']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.talk:
+    class: System\Facade\Talk\TalkFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setTalkRepository, ['@repository.talk']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setItemsTagsRepository, ['@repository.itemsTags']]
+    - [setItemsLocalizationRepository, ['@repository.itemsLocalization']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.privateOffice:
+    class: System\Facade\PrivateOffice\PrivateOfficeFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+
+  facade.cardManagement:
+    class: System\Facade\CardManagement\CardManagementFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setButtonComponent, ['@component.button']]
+    - [setBillingComponent, ['@component.billing']]
+
+  facade.mainMenu:
+    class: System\Facade\MainMenu\MainMenuFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setItemsLocalizationRepository, ['@repository.itemsLocalization']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setButtonComponent, ['@component.button']]

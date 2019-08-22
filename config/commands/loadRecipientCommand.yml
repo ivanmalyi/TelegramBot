@@ -1,0 +1,8 @@
+services:
+  console.loadrecipientcommand:
+    class: System\Console\Command\LoadRecipient\LoadRecipientCommand
+    calls:
+    - [setLogger, ['@logger']]
+    - [setBillingComponent, ['@component.billing']]
+    - [setRecipientsRepository, ['@repository.recipients']]
+    - [setRecipientsTemplateRepository, ['@repository.recipientsTemplate']]

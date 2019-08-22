@@ -1,0 +1,215 @@
+Выбран item
+
+{
+  "update_id": 32126746,
+  "callback_query": {
+    "id": "2096331739722715975",
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "language_code": "ru"
+    },
+    "message": {
+      "message_id": 1438,
+      "from": {
+        "id": 706155942,
+        "is_bot": true,
+        "first_name": "SystemPaybot",
+        "username": "DneprPaybot"
+      },
+      "chat": {
+        "id": 488090268,
+        "first_name": "Ivan",
+        "last_name": "Malyi",
+        "type": "private"
+      },
+      "date": 1552294926,
+      "text": " "
+    },
+    "chat_instance": "-7252885498874711130",
+    "data": "{\"TypeKeyboardAction\":4, \"Id\":1}"
+  }
+}
+
+Выбрана секция
+{
+  "update_id": 32126746,
+  "callback_query": {
+    "id": "2096331739722715975",
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "language_code": "ru"
+    },
+    "message": {
+      "message_id": 1438,
+      "from": {
+        "id": 706155942,
+        "is_bot": true,
+        "first_name": "SystemPaybot",
+        "username": "DneprPaybot"
+      },
+      "chat": {
+        "id": 488090268,
+        "first_name": "Ivan",
+        "last_name": "Malyi",
+        "type": "private"
+      },
+      "date": 1552294926,
+      "text": " "
+    },
+    "chat_instance": "-7252885498874711130",
+    "data": "{\"TypeKeyboardAction\":\"GetSections\", \"ButtonId\":1, \"IsPagination\":false}"
+  }
+}
+
+
+
+
+
+//Старт
+{
+  "update_id": 238142278,
+  "message": {
+    "message_id": 4799,
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "username": "ivan_malyi93",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 488090268,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "username": "ivan_malyi93",
+      "type": "private"
+    },
+    "date": 1559545411,
+    "text": "/start",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 6,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
+
+начать оплату
+{
+  "update_id": 32126664,
+  "message": {
+    "message_id": 1263,
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 488090268,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "type": "private"
+    },
+    "date": 1549361956,
+    "text": "# Новый платеж #"
+  }
+}
+
+сумма
+{
+  "update_id": 32126664,
+  "message": {
+    "message_id": 1263,
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 488090268,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "type": "private"
+    },
+    "date": 1549361956,
+    "text": "445,55"
+  }
+}
+
+
+аккаунт
+{
+  "update_id": 32126664,
+  "message": {
+    "message_id": 1263,
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 488090268,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "type": "private"
+    },
+    "date": 1549361956,
+    "text": "0800507507"
+  }
+}
+
+
+старт с параметрами
+{
+  "update_id": 238142277,
+  "message": {
+    "message_id": 4797,
+    "from": {
+      "id": 488090268,
+      "is_bot": false,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "username": "ivan_malyi93",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 488090268,
+      "first_name": "Ivan",
+      "last_name": "Malyi",
+      "username": "ivan_malyi93",
+      "type": "private"
+    },
+    "date": 1559544644,
+    "text": "/start vCH1vGWJxfSeofSAs0K5PA",
+    "entities": [
+      {
+        "offset": 0,
+        "length": 6,
+        "type": "bot_command"
+      }
+    ]
+  }
+}
+
+$botApi = new BotApi('680124193:AAHpnxsJzv4y8y0lM_SEJInhME-M3Q85cXM');
+$botApi->sendMessage(488090268, file_get_contents("php://input"));
+
+
+//Бот токен для прода
+897247693:AAHxEuGcBMx7FxjwMfQNGCabOZuKU1o7Gwg
+

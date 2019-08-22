@@ -1,0 +1,19 @@
+services:
+  action.telegramCallbackError:
+    class: System\Action\TelegramCallbackError
+    calls:
+      - [setLogger, ['@logger']]
+      - [setPayBot, ['@telegram.payPot']]
+      - [setTelegramBotSetting, ['@bot.settings']]
+      - [setTelegramCallbackErrorFacade, ['@facade.telegramCallbackError']]
+
+  facade.telegramCallbackError:
+    class: System\Facade\TelegramCallbackError\TelegramCallbackErrorFacade
+    calls:
+      - [setLogger, ['@logger']]
+      - [setChequesRepository, ['@repository.cheques']]
+      - [setChequesCallbackUrlsRepository, ['@repository.chequesCallbackUrls']]
+      - [setChatsRepository, ['@repository.chats']]
+      - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+      - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+      - [setMessageProcessingComponent, ['@component.messageProcessing']]

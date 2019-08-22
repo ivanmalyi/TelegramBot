@@ -1,0 +1,14 @@
+services:
+  action.telegramAd:
+    class: System\Action\TelegramAd
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPayBot, ['@telegram.payPot']]
+    - [setTelegramBotSetting, ['@bot.settings']]
+    - [setTelegramAdFacade, ['@facade.telegramAd']]
+
+  facade.telegramAd:
+    class: System\Facade\TelegramAd\TelegramAdFacade
+    calls:
+    - [setLogger, ['@logger']]
+    - [setUserAdsRepository, ['@repository.userAds']]

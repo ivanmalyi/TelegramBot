@@ -1,0 +1,8 @@
+services:
+  console.loadinformationcommand:
+    class: System\Console\Command\LoadInformation\LoadInformationCommand
+    calls:
+      - [setLogger, ['@logger']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setFlashNotice, ['@component.flashNotice']]
+      - [setPointsInfoRepository, ['@repository.pointsInfo']]

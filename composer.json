@@ -1,0 +1,31 @@
+{
+    "name": "ivan/sistema.chat-bot",
+    "authors": [
+        {
+            "name": "Ivan",
+            "email": "i.malyi@fc-sistema.com"
+        }
+    ],
+    "require": {
+        "longman/telegram-bot": "^0.55.1",
+        "symfony/dependency-injection": "^4.2",
+        "symfony/yaml": "^4.2",
+        "predis/predis": "^1.1",
+        "monolog/monolog": "^1.24",
+        "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/routing": "^4.2",
+        "telegram-bot/api": "^2.3",
+        "google/cloud": "^0.104.0"
+    },
+    "require-dev": {
+        "robmorgan/phinx": "^0.10.6",
+        "behat/behat": "^3.5",
+        "phpunit/phpunit": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "System\\": "src//System"
+        }
+    }
+
+}

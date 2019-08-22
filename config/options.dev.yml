@@ -1,0 +1,22 @@
+parameters:
+  mysql.host: 127.0.0.1
+  mysql.port: 4001
+  mysql.username: root
+  mysql.password: 1
+  mysql.database: crane
+  mailer_host: 77.120.97.36
+  mailer_port: 25
+  mailer_user: info@fc-sistema.com
+  mailer_password: Johthop8
+  redis.scheme: tcp
+  redis.host: 127.0.0.1
+  redis.port: 6379
+  redis.logs: logs_chat_bot
+  redis.password:
+  telegram_key: 680124193:AAHpnxsJzv4y8y0lM_SEJInhME-M3Q85cXM
+  telegram_name: TestFcSystemPaybot
+  telegram_chat_id: -357241431
+  chatbot.hostname: "chatbot"
+  receiver.telegram_chat_id: 488090268
+  receiver.telegram_first_name: "Ivan"
+  receiver.telegram_last_name: "Malyi"

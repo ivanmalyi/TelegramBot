@@ -1,0 +1,8 @@
+services:
+  console.paymentpurposecommand:
+    class: System\Console\Command\PaymentPurpose\PaymentPurposeCommand
+    calls:
+      - [setLogger, ['@logger']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setFlashNotice, ['@component.flashNotice']]
+      - [setPaymentsPurposeRepository, ['@repository.paymentsPurpose']]

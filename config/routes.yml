@@ -1,0 +1,19 @@
+route.Telegram:
+    path: /telegram
+    defaults: { _controller: 'action.telegram::handle' }
+
+route.Telegram3ds:
+    path: /telegram/callback/3ds
+    defaults: { _controller: 'action.telegramCallback3ds::handle' }
+
+route.TelegramCallbackOk:
+    path: /telegram/callback/ok
+    defaults: { _controller: 'action.telegramCallbackOk::handle' }
+
+route.TelegramError:
+    path: /telegram/callback/error
+    defaults: { _controller: 'action.telegramCallbackError::handle' }
+
+route.TelegramAd:
+    path: /telegram/ad
+    defaults: { _controller: 'action.telegramAd::handle' }

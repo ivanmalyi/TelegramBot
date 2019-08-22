@@ -1,0 +1,60 @@
+services:
+  component.flashNotice:
+    class: System\Component\FlashNoticeComponent
+    calls:
+      - [setLogger, ['@logger']]
+      - [setTelegramBot, ['@bot']]
+      - [setMailClient, ['@mailer']]
+      - [setNotificationsRepository, ['@repository.notifications']]
+
+  component.security:
+    class: System\Component\OpenSslSecurityComponent
+    calls:
+      - [setLogger, ['@logger']]
+
+  component.daemon:
+    class: System\Component\DaemonComponent
+    calls:
+    - [setLogger, ['@logger']]
+    - [setDaemonsRepository, ['@repository.daemons']]
+
+  component.billing:
+    class: System\Component\Billing\BillingComponent
+    calls:
+    - [setLogger, ['@logger']]
+    - [setHttpClient, ['@http.client']]
+    - [setBillingSettingsRepository, ['@repository.billingSettings']]
+    - [setOpenSslSecurityComponent, ['@component.security']]
+
+  component.billing.test:
+    class: System\Component\Billing\BillingComponentTest
+    calls:
+    - [setLogger, ['@logger']]
+    - [setHttpClient, ['@http.client']]
+    - [setBillingSettingsRepository, ['@repository.billingSettings']]
+    - [setOpenSslSecurityComponent, ['@component.security']]
+
+  component.createCheque:
+    class: System\Component\CreateCheque\CreateChequeComponent
+    calls:
+    - [setChatsRepository, ['@repository.chats']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]
+    - [setRecipientsTemplateRepository, ['@repository.recipientsTemplate']]
+    - [setPointsInfoRepository, ['@repository.pointsInfo']]
+    - [setPaymentsPurposeRepository, ['@repository.paymentsPurpose']]
+    - [setItemsLocalizationRepository, ['@repository.itemsLocalization']]
+    - [setLogger, ['@logger']]
+    - [setPaymentSystemsHeadersLocalizationRepository, ['@repository.paymentSystemsHeadersLocalization']]
+    - [setChequesRepository, ['@repository.cheques']]
+    - [setChequePrintRepository, ['@repository.chequePrint']]
+
+  component.messageProcessing:
+    class: System\Component\MessageProcessing\MessageProcessingComponent
+    calls:
+    - [setEmojiRepository, ['@repository.emoji']]
+
+  component.button:
+    class: System\Component\Button\ButtonComponent
+    calls:
+    - [setEmojiRepository, ['@repository.emoji']]
+    - [setButtonsRepository, ['@repository.buttons']]

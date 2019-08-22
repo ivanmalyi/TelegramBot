@@ -1,0 +1,14 @@
+services:
+  console.chequeservice:
+    class: System\Console\Service\Cheque\ChequeService
+    calls:
+    - [setLogger, ['@logger']]
+    - [setPaymentsRepository, ['@repository.payments']]
+    - [setChatsRepository, ['@repository.chats']]
+    - [setPayBot, ['@telegram.payPot']]
+    - [setChequesTextRepository, ['@repository.chequesText']]
+    - [setCreateChequeComponent, ['@component.createCheque']]
+    - [setDaemonComponent, ['@component.daemon']]
+    - [setChatsHistoryRepository, ['@repository.chatsHistory']]
+    - [setMessageProcessingComponent, ['@component.messageProcessing']]
+    - [setStagesMessagesRepository, ['@repository.stagesMessages']]

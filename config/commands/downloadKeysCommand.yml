@@ -1,0 +1,8 @@
+services:
+  console.downloadkeyscommand:
+    class: System\Console\Command\DownloadKeys\DownloadKeysCommand
+    calls:
+      - [setLogger, ['@logger']]
+      - [setBillingComponent, ['@component.billing']]
+      - [setFlashNotice, ['@component.flashNotice']]
+      - [setBillingSettingsRepository, ['@repository.billingSettings']]
